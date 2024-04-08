@@ -49,13 +49,29 @@
 
 
 // 1.5. Prototype Pattern
-import { Character } from "./Patterns/CreationalPatterns/PrototypePattern/Character.mjs";
-let prototypeWarrior = new Character('Warrior', 100, 10,10);
-let warrior1 = prototypeWarrior.clone();
-warrior1.info();
-let warrior2 = prototypeWarrior.clone();
-warrior2.info();
+// import { Character } from "./Patterns/CreationalPatterns/PrototypePattern/Character.mjs";
+// let prototypeWarrior = new Character('Warrior', 100, 10,10);
+// let warrior1 = prototypeWarrior.clone();
+// warrior1.info();
+// let warrior2 = prototypeWarrior.clone();
+// warrior2.info();
 
-let prototypeNinja = new Character('Ninja', 100, 10,10);
-let ninja1 = prototypeNinja.clone();
-ninja1.info();
+// let prototypeNinja = new Character('Ninja', 100, 10,10);
+// let ninja1 = prototypeNinja.clone();
+// ninja1.info();
+
+
+// 2. Structural Patterns
+// 2.1. Adapter Pattern
+import { OldMusicPlayer } from "./Patterns/StructuralPatterns/AdapterPattern/OldMusicPlayer.mjs";
+import { NewMusicPlayerAdapter } from "./Patterns/StructuralPatterns/AdapterPattern/NewMusicPlayerAdapter.mjs";
+import { NewMusicPlayer } from "./Patterns/StructuralPatterns/AdapterPattern/NewMusicPlayer.mjs";
+
+let oldMusicPlayer = new OldMusicPlayer();
+oldMusicPlayer.playMusic();
+
+let newMusicPlayer = new NewMusicPlayer();
+newMusicPlayer.play();
+
+let musicPlayerAdapter = new NewMusicPlayerAdapter(newMusicPlayer);
+musicPlayerAdapter.playMusic();

@@ -38,12 +38,24 @@
 
 
 // 1.4. Builder Pattern
-import { ComputerBuilder } from './Patterns/CreationalPatterns/BuilderPattern/ComputerBuilder.mjs';
-let computer = new ComputerBuilder()
-                        .setProcessor('i7')
-                        .setMemory('16GB')
-                        .setStorage('1TB')
-                        .setGraphicsCard('Nvidia')
-                        .build();
-computer.info();
+// import { ComputerBuilder } from './Patterns/CreationalPatterns/BuilderPattern/ComputerBuilder.mjs';
+// let computer = new ComputerBuilder()
+//                         .setProcessor('i7')
+//                         .setMemory('16GB')
+//                         .setStorage('1TB')
+//                         .setGraphicsCard('Nvidia')
+//                         .build();
+// computer.info();
 
+
+// 1.5. Prototype Pattern
+import { Character } from "./Patterns/CreationalPatterns/PrototypePattern/Character.mjs";
+let prototypeWarrior = new Character('Warrior', 100, 10,10);
+let warrior1 = prototypeWarrior.clone();
+warrior1.info();
+let warrior2 = prototypeWarrior.clone();
+warrior2.info();
+
+let prototypeNinja = new Character('Ninja', 100, 10,10);
+let ninja1 = prototypeNinja.clone();
+ninja1.info();

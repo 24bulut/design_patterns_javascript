@@ -63,15 +63,36 @@
 
 // 2. Structural Patterns
 // 2.1. Adapter Pattern
-import { OldMusicPlayer } from "./Patterns/StructuralPatterns/AdapterPattern/OldMusicPlayer.mjs";
-import { NewMusicPlayerAdapter } from "./Patterns/StructuralPatterns/AdapterPattern/NewMusicPlayerAdapter.mjs";
-import { NewMusicPlayer } from "./Patterns/StructuralPatterns/AdapterPattern/NewMusicPlayer.mjs";
+// import { OldMusicPlayer } from "./Patterns/StructuralPatterns/AdapterPattern/OldMusicPlayer.mjs";
+// import { NewMusicPlayerAdapter } from "./Patterns/StructuralPatterns/AdapterPattern/NewMusicPlayerAdapter.mjs";
+// import { NewMusicPlayer } from "./Patterns/StructuralPatterns/AdapterPattern/NewMusicPlayer.mjs";
 
-let oldMusicPlayer = new OldMusicPlayer();
-oldMusicPlayer.playMusic();
+// let oldMusicPlayer = new OldMusicPlayer();
+// oldMusicPlayer.playMusic();
 
-let newMusicPlayer = new NewMusicPlayer();
-newMusicPlayer.play();
+// let newMusicPlayer = new NewMusicPlayer();
+// newMusicPlayer.play();
 
-let musicPlayerAdapter = new NewMusicPlayerAdapter(newMusicPlayer);
-musicPlayerAdapter.playMusic();
+// let musicPlayerAdapter = new NewMusicPlayerAdapter(newMusicPlayer);
+// musicPlayerAdapter.playMusic();
+
+
+// 2.2. Bridge Pattern
+import { TV } from './Patterns/StructuralPatterns/Bridge/TV.mjs';
+import { BasicRemote } from './Patterns/StructuralPatterns/Bridge/BasicRemote.mjs';
+import { SmartRemote } from './Patterns/StructuralPatterns/Bridge/SmartRemote.mjs';
+let tv = new TV();
+let basicRemote = new BasicRemote(tv);
+basicRemote.togglePower();
+basicRemote.volumeUp();
+basicRemote.volumeUp();
+basicRemote.volumeDown();
+basicRemote.channelUp();
+basicRemote.channelDown();
+
+let smartRemote = new SmartRemote(tv);
+smartRemote.togglePower();
+smartRemote.volumeUp();
+smartRemote.volumeUp();
+smartRemote.volumeDown();
+

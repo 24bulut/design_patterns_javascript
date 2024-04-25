@@ -78,9 +78,9 @@
 
 
 // 2.2. Bridge Pattern
-// import { TV } from './Patterns/StructuralPatterns/Bridge/TV.mjs';
-// import { BasicRemote } from './Patterns/StructuralPatterns/Bridge/BasicRemote.mjs';
-// import { SmartRemote } from './Patterns/StructuralPatterns/Bridge/SmartRemote.mjs';
+// import { TV } from './Patterns/StructuralPatterns/BridgePattern/TV.mjs';
+// import { BasicRemote } from './Patterns/StructuralPatterns/BridgePattern/BasicRemote.mjs';
+// import { SmartRemote } from './Patterns/StructuralPatterns/BridgePattern/SmartRemote.mjs';
 // let tv = new TV();
 // let basicRemote = new BasicRemote(tv);
 // basicRemote.togglePower();
@@ -98,16 +98,34 @@
 
 
 // 2.3. Composite Pattern
-import { Manager } from './Patterns/StructuralPatterns/CompositePattern/Manager.mjs';
-import { Developer } from './Patterns/StructuralPatterns/CompositePattern/Developer.mjs';
+// import { Manager } from './Patterns/StructuralPatterns/CompositePattern/Manager.mjs';
+// import { Developer } from './Patterns/StructuralPatterns/CompositePattern/Developer.mjs';
 
-const ceo = new Manager("John", "CEO");
-const headDeveloper = new Manager("Alice", "Head Developer");
-const developer1 = new Developer("Bob", "Developer");
-const developer2 = new Developer("Charlie", "Developer");
+// const ceo = new Manager("John", "CEO");
+// const headDeveloper = new Manager("Alice", "Head Developer");
+// const developer1 = new Developer("Bob", "Developer");
+// const developer2 = new Developer("Charlie", "Developer");
 
-headDeveloper.addEmployee(developer1);
-headDeveloper.addEmployee(developer2);
+// headDeveloper.addEmployee(developer1);
+// headDeveloper.addEmployee(developer2);
 
-ceo.addEmployee(headDeveloper);
-ceo.display();
+// ceo.addEmployee(headDeveloper);
+// ceo.display();
+
+
+// 2.4. Decorator Pattern
+import { SimpleCoffee } from './Patterns/StructuralPatterns/DecoratorPattern/SimpleCoffee.mjs';
+import { MilkDecorator } from './Patterns/StructuralPatterns/DecoratorPattern/MilkDecorator.mjs';
+import { SugarDecorator } from './Patterns/StructuralPatterns/DecoratorPattern/SugarDecorator.mjs';
+
+let coffee = new SimpleCoffee();
+console.log(coffee.getDescription());;
+console.log(coffee.getCost());
+
+let coffeeWithMilk = new MilkDecorator(coffee);
+console.log(coffeeWithMilk.getDescription());
+console.log(coffeeWithMilk.getCost());
+
+let coffeeWithSugar = new SugarDecorator(coffee);
+console.log(coffeeWithSugar.getDescription());
+console.log(coffeeWithSugar.getCost());

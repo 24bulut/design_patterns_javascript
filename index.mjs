@@ -78,21 +78,36 @@
 
 
 // 2.2. Bridge Pattern
-import { TV } from './Patterns/StructuralPatterns/Bridge/TV.mjs';
-import { BasicRemote } from './Patterns/StructuralPatterns/Bridge/BasicRemote.mjs';
-import { SmartRemote } from './Patterns/StructuralPatterns/Bridge/SmartRemote.mjs';
-let tv = new TV();
-let basicRemote = new BasicRemote(tv);
-basicRemote.togglePower();
-basicRemote.volumeUp();
-basicRemote.volumeUp();
-basicRemote.volumeDown();
-basicRemote.channelUp();
-basicRemote.channelDown();
+// import { TV } from './Patterns/StructuralPatterns/Bridge/TV.mjs';
+// import { BasicRemote } from './Patterns/StructuralPatterns/Bridge/BasicRemote.mjs';
+// import { SmartRemote } from './Patterns/StructuralPatterns/Bridge/SmartRemote.mjs';
+// let tv = new TV();
+// let basicRemote = new BasicRemote(tv);
+// basicRemote.togglePower();
+// basicRemote.volumeUp();
+// basicRemote.volumeUp();
+// basicRemote.volumeDown();
+// basicRemote.channelUp();
+// basicRemote.channelDown();
 
-let smartRemote = new SmartRemote(tv);
-smartRemote.togglePower();
-smartRemote.volumeUp();
-smartRemote.volumeUp();
-smartRemote.volumeDown();
+// let smartRemote = new SmartRemote(tv);
+// smartRemote.togglePower();
+// smartRemote.volumeUp();
+// smartRemote.volumeUp();
+// smartRemote.volumeDown();
 
+
+// 2.3. Composite Pattern
+import { Manager } from './Patterns/StructuralPatterns/CompositePattern/Manager.mjs';
+import { Developer } from './Patterns/StructuralPatterns/CompositePattern/Developer.mjs';
+
+const ceo = new Manager("John", "CEO");
+const headDeveloper = new Manager("Alice", "Head Developer");
+const developer1 = new Developer("Bob", "Developer");
+const developer2 = new Developer("Charlie", "Developer");
+
+headDeveloper.addEmployee(developer1);
+headDeveloper.addEmployee(developer2);
+
+ceo.addEmployee(headDeveloper);
+ceo.display();

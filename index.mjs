@@ -115,17 +115,17 @@
 
 // 2.4. Decorator Pattern
 import { SimpleCoffee } from './Patterns/StructuralPatterns/DecoratorPattern/SimpleCoffee.mjs';
-import { MilkDecorator } from './Patterns/StructuralPatterns/DecoratorPattern/MilkDecorator.mjs';
-import { SugarDecorator } from './Patterns/StructuralPatterns/DecoratorPattern/SugarDecorator.mjs';
+import { WithMilk } from "./Patterns/StructuralPatterns/DecoratorPattern/Components/WithMilk.mjs";
+import { WithSugar } from "./Patterns/StructuralPatterns/DecoratorPattern/Components/WithSugar.mjs";
 
 let coffee = new SimpleCoffee();
 console.log(coffee.getDescription());;
 console.log(coffee.getCost());
 
-let coffeeWithMilk = new MilkDecorator(coffee);
+let coffeeWithMilk = new WithMilk(coffee);
 console.log(coffeeWithMilk.getDescription());
 console.log(coffeeWithMilk.getCost());
 
-let coffeeWithSugar = new SugarDecorator(coffee);
+let coffeeWithSugar = new WithSugar(coffee);
 console.log(coffeeWithSugar.getDescription());
 console.log(coffeeWithSugar.getCost());

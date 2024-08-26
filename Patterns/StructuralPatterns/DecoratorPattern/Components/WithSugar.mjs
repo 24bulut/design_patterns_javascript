@@ -1,4 +1,4 @@
-import { CoffeeDecorator } from '../CoffeeDecorator.js';
+import { CoffeeDecorator } from '../CoffeeDecorator.mjs';
 
 export class WithSugar extends CoffeeDecorator {
     getCost() {
@@ -8,5 +8,5 @@ export class WithSugar extends CoffeeDecorator {
     getDescription() {
       return `${this.coffee.getDescription()}, with Sugar`;
     }
-  }
+}
   

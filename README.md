@@ -18,3 +18,5 @@ Bu repo, JavaScript kullanarak tasarım kalıplarını öğrenmek ve anlamak ist
 2. Bridge
 3. Composite
 4. Decorator
+5. Facade
+6. Flyweight

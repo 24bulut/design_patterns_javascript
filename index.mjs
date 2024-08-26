@@ -132,11 +132,23 @@
 
 
 // 2.5 Facade Pattern
+// import {HomeAutomationFacade} from './Patterns/StructuralPatterns/FacadePattern/HomeAutomationFacade.mjs';
+// const homeAutomation = new HomeAutomationFacade();
+// homeAutomation.arriveHome();
+// homeAutomation.leaveHome();
 
-import {HomeAutomationFacade} from './Patterns/StructuralPatterns/FacadePattern/HomeAutomationFacade.mjs';
 
-const homeAutomation = new HomeAutomationFacade();
+// 2.6 Flyweight Pattern
 
-homeAutomation.arriveHome();
+import { CircleFactory } from "./Patterns/StructuralPatterns/FlyweightPattern/CircleFactory.mjs";
 
-homeAutomation.leaveHome();
+const factory = new CircleFactory();
+
+const redCircle1 = factory.getCircle("Kırmızı");
+redCircle1.draw(10, 20, 30);
+
+const redCircle2 = factory.getCircle("Kırmızı");
+redCircle2.draw(50, 60, 30);
+
+const blueCircle = factory.getCircle("Mavi");
+blueCircle.draw(20, 30, 40);

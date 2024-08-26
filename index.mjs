@@ -114,18 +114,29 @@
 
 
 // 2.4. Decorator Pattern
-import { SimpleCoffee } from './Patterns/StructuralPatterns/DecoratorPattern/SimpleCoffee.mjs';
-import { WithMilk } from "./Patterns/StructuralPatterns/DecoratorPattern/Components/WithMilk.mjs";
-import { WithSugar } from "./Patterns/StructuralPatterns/DecoratorPattern/Components/WithSugar.mjs";
+// import { SimpleCoffee } from './Patterns/StructuralPatterns/DecoratorPattern/SimpleCoffee.mjs';
+// import { WithMilk } from "./Patterns/StructuralPatterns/DecoratorPattern/Components/WithMilk.mjs";
+// import { WithSugar } from "./Patterns/StructuralPatterns/DecoratorPattern/Components/WithSugar.mjs";
 
-let coffee = new SimpleCoffee();
-console.log(coffee.getDescription());;
-console.log(coffee.getCost());
+// let coffee = new SimpleCoffee();
+// console.log(coffee.getDescription());;
+// console.log(coffee.getCost());
 
-let coffeeWithMilk = new WithMilk(coffee);
-console.log(coffeeWithMilk.getDescription());
-console.log(coffeeWithMilk.getCost());
+// let coffeeWithMilk = new WithMilk(coffee);
+// console.log(coffeeWithMilk.getDescription());
+// console.log(coffeeWithMilk.getCost());
 
-let coffeeWithSugar = new WithSugar(coffee);
-console.log(coffeeWithSugar.getDescription());
-console.log(coffeeWithSugar.getCost());
+// let coffeeWithSugar = new WithSugar(coffee);
+// console.log(coffeeWithSugar.getDescription());
+// console.log(coffeeWithSugar.getCost());
+
+
+// 2.5 Facade Pattern
+
+import {HomeAutomationFacade} from './Patterns/StructuralPatterns/FacadePattern/HomeAutomationFacade.mjs';
+
+const homeAutomation = new HomeAutomationFacade();
+
+homeAutomation.arriveHome();
+
+homeAutomation.leaveHome();

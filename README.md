@@ -20,3 +20,4 @@ Bu repo, JavaScript kullanarak tasarım kalıplarını öğrenmek ve anlamak ist
 4. Decorator
 5. Facade
 6. Flyweight
+7. Proxy

@@ -139,16 +139,29 @@
 
 
 // 2.6 Flyweight Pattern
+// import { CircleFactory } from "./Patterns/StructuralPatterns/FlyweightPattern/CircleFactory.mjs";
 
-import { CircleFactory } from "./Patterns/StructuralPatterns/FlyweightPattern/CircleFactory.mjs";
+// const factory = new CircleFactory();
 
-const factory = new CircleFactory();
+// const redCircle1 = factory.getCircle("Kırmızı");
+// redCircle1.draw(10, 20, 30);
 
-const redCircle1 = factory.getCircle("Kırmızı");
-redCircle1.draw(10, 20, 30);
+// const redCircle2 = factory.getCircle("Kırmızı");
+// redCircle2.draw(50, 60, 30);
 
-const redCircle2 = factory.getCircle("Kırmızı");
-redCircle2.draw(50, 60, 30);
+// const blueCircle = factory.getCircle("Mavi");
+// blueCircle.draw(20, 30, 40);
 
-const blueCircle = factory.getCircle("Mavi");
-blueCircle.draw(20, 30, 40);
+
+// 2.7 Proxy Pattern
+import { User } from "./Patterns/StructuralPatterns/ProxyPattern/User.mjs";
+import { VideoServiceProxy } from "./Patterns/StructuralPatterns/ProxyPattern/VideoServiceProxy.mjs";
+
+const normalUser = new User("Ali", false);
+const premiumUser = new User("Veli", true);
+
+const videoProxyForNormalUser = new VideoServiceProxy(normalUser);
+videoProxyForNormalUser.playVideo("1234");
+
+const videoProxyForPremiumUser = new VideoServiceProxy(premiumUser);
+videoProxyForPremiumUser.playVideo("1234");

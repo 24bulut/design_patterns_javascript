@@ -25,3 +25,4 @@ Bu repo, JavaScript kullanarak tasarım kalıplarını öğrenmek ve anlamak ist
 ### Structural Design Patterns
 
 1. Chain Of Responsibility
+2. Command Pattern

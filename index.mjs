@@ -168,29 +168,51 @@
 
 
 // 3.1 Chain of Responsibility Pattern
-import { EmailValidator } from "./Patterns/BehavioralPatterns/ChainOfResponsibilityPattern/EmailValidator.mjs";
-import { PasswordLengthValidator } from "./Patterns/BehavioralPatterns/ChainOfResponsibilityPattern/PasswordLengthValidator.mjs";
-import { PasswordMatchValidator } from "./Patterns/BehavioralPatterns/ChainOfResponsibilityPattern/PasswordMatchValidator.mjs";
+// import { EmailValidator } from "./Patterns/BehavioralPatterns/ChainOfResponsibilityPattern/EmailValidator.mjs";
+// import { PasswordLengthValidator } from "./Patterns/BehavioralPatterns/ChainOfResponsibilityPattern/PasswordLengthValidator.mjs";
+// import { PasswordMatchValidator } from "./Patterns/BehavioralPatterns/ChainOfResponsibilityPattern/PasswordMatchValidator.mjs";
 
-const emailValidator = new EmailValidator();
-const passwordLengthValidator = new PasswordLengthValidator();
-const passwordMatchValidator = new PasswordMatchValidator();
+// const emailValidator = new EmailValidator();
+// const passwordLengthValidator = new PasswordLengthValidator();
+// const passwordMatchValidator = new PasswordMatchValidator();
 
-emailValidator
-    .setNext(passwordLengthValidator)
-    .setNext(passwordMatchValidator);
+// emailValidator
+//     .setNext(passwordLengthValidator)
+//     .setNext(passwordMatchValidator);
 
-const formRequest = {
-  email: "example@example.com",
-  password: "mypass123123",
-  confirmPassword: "mypass123123",
-};
+// const formRequest = {
+//   email: "example@example.com",
+//   password: "mypass123123",
+//   confirmPassword: "mypass123123",
+// };
 
-// Doğrulama işlemini başlatma
-const isFormValid = emailValidator.validate(formRequest);
+// // Doğrulama işlemini başlatma
+// const isFormValid = emailValidator.validate(formRequest);
 
-if (isFormValid) {
-  console.log("Form doğrulandı ve geçerli!");
-} else {
-  console.log("Form doğrulama başarısız oldu.");
-}
+// if (isFormValid) {
+//   console.log("Form doğrulandı ve geçerli!");
+// } else {
+//   console.log("Form doğrulama başarısız oldu.");
+// }
+
+// 3.2 Command Pattern
+import { GameCharacter } from "./Patterns/BehavioralPatterns/CommandPattern/GameCharacter.mjs";
+import { GameController } from "./Patterns/BehavioralPatterns/CommandPattern/GameController.mjs";
+import { MoveForwardCommand } from "./Patterns/BehavioralPatterns/CommandPattern/MoveForwardCommand.mjs";
+import { MoveBackwardCommand } from "./Patterns/BehavioralPatterns/CommandPattern/MoveBackwardCommand.mjs";
+import { JumpCommand } from "./Patterns/BehavioralPatterns/CommandPattern/JumpCommand.mjs";
+
+const character = new GameCharacter("Kahraman");
+const gameController = new GameController();
+
+const moveForward = new MoveForwardCommand(character, 10);
+const moveBackward = new MoveBackwardCommand(character, 5);
+const jump = new JumpCommand(character);
+
+gameController.executeCommand(moveForward);  // Output: Kahraman 10 adım ileri gitti. Şu anki pozisyon: 10
+gameController.executeCommand(jump);         // Output: Kahraman zıpladı!
+gameController.executeCommand(moveBackward); // Output: Kahraman 5 adım geri gitti. Şu anki pozisyon: 5
+
+gameController.undo(); // Output: Kahraman 5 adım ileri gitti. Şu anki pozisyon: 10
+gameController.undo(); // Output: Kahraman geri zıplayamaz!
+gameController.undo(); // Output: Kahraman 10 adım geri gitti. Şu anki pozisyon: 0

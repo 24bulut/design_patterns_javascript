@@ -21,3 +21,7 @@ Bu repo, JavaScript kullanarak tasarım kalıplarını öğrenmek ve anlamak ist
 5. Facade
 6. Flyweight
 7. Proxy
+
+### Structural Design Patterns
+
+1. Chain Of Responsibility

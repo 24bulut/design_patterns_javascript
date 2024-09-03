@@ -154,14 +154,43 @@
 
 
 // 2.7 Proxy Pattern
-import { User } from "./Patterns/StructuralPatterns/ProxyPattern/User.mjs";
-import { VideoServiceProxy } from "./Patterns/StructuralPatterns/ProxyPattern/VideoServiceProxy.mjs";
+// import { User } from "./Patterns/StructuralPatterns/ProxyPattern/User.mjs";
+// import { VideoServiceProxy } from "./Patterns/StructuralPatterns/ProxyPattern/VideoServiceProxy.mjs";
 
-const normalUser = new User("Ali", false);
-const premiumUser = new User("Veli", true);
+// const normalUser = new User("Ali", false);
+// const premiumUser = new User("Veli", true);
 
-const videoProxyForNormalUser = new VideoServiceProxy(normalUser);
-videoProxyForNormalUser.playVideo("1234");
+// const videoProxyForNormalUser = new VideoServiceProxy(normalUser);
+// videoProxyForNormalUser.playVideo("1234");
 
-const videoProxyForPremiumUser = new VideoServiceProxy(premiumUser);
-videoProxyForPremiumUser.playVideo("1234");
+// const videoProxyForPremiumUser = new VideoServiceProxy(premiumUser);
+// videoProxyForPremiumUser.playVideo("1234");
+
+
+// 3.1 Chain of Responsibility Pattern
+import { EmailValidator } from "./Patterns/BehavioralPatterns/ChainOfResponsibilityPattern/EmailValidator.mjs";
+import { PasswordLengthValidator } from "./Patterns/BehavioralPatterns/ChainOfResponsibilityPattern/PasswordLengthValidator.mjs";
+import { PasswordMatchValidator } from "./Patterns/BehavioralPatterns/ChainOfResponsibilityPattern/PasswordMatchValidator.mjs";
+
+const emailValidator = new EmailValidator();
+const passwordLengthValidator = new PasswordLengthValidator();
+const passwordMatchValidator = new PasswordMatchValidator();
+
+emailValidator
+    .setNext(passwordLengthValidator)
+    .setNext(passwordMatchValidator);
+
+const formRequest = {
+  email: "example@example.com",
+  password: "mypass123123",
+  confirmPassword: "mypass123123",
+};
+
+// Doğrulama işlemini başlatma
+const isFormValid = emailValidator.validate(formRequest);
+
+if (isFormValid) {
+  console.log("Form doğrulandı ve geçerli!");
+} else {
+  console.log("Form doğrulama başarısız oldu.");
+}

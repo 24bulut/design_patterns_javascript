@@ -196,23 +196,51 @@
 // }
 
 // 3.2 Command Pattern
-import { GameCharacter } from "./Patterns/BehavioralPatterns/CommandPattern/GameCharacter.mjs";
-import { GameController } from "./Patterns/BehavioralPatterns/CommandPattern/GameController.mjs";
-import { MoveForwardCommand } from "./Patterns/BehavioralPatterns/CommandPattern/MoveForwardCommand.mjs";
-import { MoveBackwardCommand } from "./Patterns/BehavioralPatterns/CommandPattern/MoveBackwardCommand.mjs";
-import { JumpCommand } from "./Patterns/BehavioralPatterns/CommandPattern/JumpCommand.mjs";
+// import { GameCharacter } from "./Patterns/BehavioralPatterns/CommandPattern/GameCharacter.mjs";
+// import { GameController } from "./Patterns/BehavioralPatterns/CommandPattern/GameController.mjs";
+// import { MoveForwardCommand } from "./Patterns/BehavioralPatterns/CommandPattern/MoveForwardCommand.mjs";
+// import { MoveBackwardCommand } from "./Patterns/BehavioralPatterns/CommandPattern/MoveBackwardCommand.mjs";
+// import { JumpCommand } from "./Patterns/BehavioralPatterns/CommandPattern/JumpCommand.mjs";
 
-const character = new GameCharacter("Kahraman");
-const gameController = new GameController();
+// const character = new GameCharacter("Kahraman");
+// const gameController = new GameController();
 
-const moveForward = new MoveForwardCommand(character, 10);
-const moveBackward = new MoveBackwardCommand(character, 5);
-const jump = new JumpCommand(character);
+// const moveForward = new MoveForwardCommand(character, 10);
+// const moveBackward = new MoveBackwardCommand(character, 5);
+// const jump = new JumpCommand(character);
 
-gameController.executeCommand(moveForward);  // Output: Kahraman 10 adım ileri gitti. Şu anki pozisyon: 10
-gameController.executeCommand(jump);         // Output: Kahraman zıpladı!
-gameController.executeCommand(moveBackward); // Output: Kahraman 5 adım geri gitti. Şu anki pozisyon: 5
+// gameController.executeCommand(moveForward);  // Output: Kahraman 10 adım ileri gitti. Şu anki pozisyon: 10
+// gameController.executeCommand(jump);         // Output: Kahraman zıpladı!
+// gameController.executeCommand(moveBackward); // Output: Kahraman 5 adım geri gitti. Şu anki pozisyon: 5
 
-gameController.undo(); // Output: Kahraman 5 adım ileri gitti. Şu anki pozisyon: 10
-gameController.undo(); // Output: Kahraman geri zıplayamaz!
-gameController.undo(); // Output: Kahraman 10 adım geri gitti. Şu anki pozisyon: 0
+// gameController.undo(); // Output: Kahraman 5 adım ileri gitti. Şu anki pozisyon: 10
+// gameController.undo(); // Output: Kahraman geri zıplayamaz!
+// gameController.undo(); // Output: Kahraman 10 adım geri gitti. Şu anki pozisyon: 0
+
+// 3.3 Iterator Pattern
+// import { BookCollection } from "./Patterns/BehavioralPatterns/IteratorPattern/BookCollection.mjs";
+
+// const collection = new BookCollection();
+// collection.addBook("Kitap 1");
+// collection.addBook("Kitap 2");
+// collection.addBook("Kitap 3");
+
+// const iterator = collection.createIterator();
+
+// while (iterator.hasNext()) {
+//   console.log(iterator.next());
+// }
+
+
+// 3.4 Mediator Pattern
+import { ChatRoom } from "./Patterns/BehavioralPatterns/MediatorPattern/ChatRoom.mjs";
+import { User } from "./Patterns/BehavioralPatterns/MediatorPattern/User.mjs";
+
+const mediator = new ChatRoom();
+
+const user1 = new User("Ahmet", mediator);
+const user2 = new User("Mehmet", mediator);
+
+user1.sendMessage("Merhaba, Mehmet!");
+
+user2.sendMessage("Merhaba, Ahmet! Nasılsın?");

@@ -26,3 +26,5 @@ Bu repo, JavaScript kullanarak tasarım kalıplarını öğrenmek ve anlamak ist
 
 1. Chain Of Responsibility
 2. Command Pattern
+3. Iterator Pattern
+4. Mediator Pattern

@@ -247,19 +247,28 @@
 
 
 // 3.5 Observer Pattern
-import { NewsAgency } from "./Patterns/BehavioralPatterns/ObserverPattern/NewsAgency.mjs";
-import { NewsChannel } from "./Patterns/BehavioralPatterns/ObserverPattern/NewsChannel.mjs";
+// import { NewsAgency } from "./Patterns/BehavioralPatterns/ObserverPattern/NewsAgency.mjs";
+// import { NewsChannel } from "./Patterns/BehavioralPatterns/ObserverPattern/NewsChannel.mjs";
 
-const newsAgency = new NewsAgency();
+// const newsAgency = new NewsAgency();
 
-const channel1 = new NewsChannel("TRT Haber");
-const channel2 = new NewsChannel("CNN News");
+// const channel1 = new NewsChannel("TRT Haber");
+// const channel2 = new NewsChannel("CNN News");
 
-newsAgency.subscribe(channel1);
-newsAgency.subscribe(channel2);
+// newsAgency.subscribe(channel1);
+// newsAgency.subscribe(channel2);
 
-newsAgency.updateNews("Son dakika !! yeni haber");
+// newsAgency.updateNews("Son dakika !! yeni haber");
 
-newsAgency.unsubscribe(channel2);
+// newsAgency.unsubscribe(channel2);
 
-newsAgency.updateNews("Yeni bir haber daha!");
+// newsAgency.updateNews("Yeni bir haber daha!");
+
+// 3.6 State Pattern
+import { Order } from "./Patterns/BehavioralPatterns/StatePattern/Order.mjs";
+const order = new Order();
+
+order.proceed(); // Output: Sipariş Onaylandı! Hazırlanıyor...
+order.proceed(); // Output: Sipariş Hazırlandı! Teslim ediliyor...
+order.proceed(); // Output: Sipariş Teslim Edildi! Süreç tamamlandı.
+order.proceed(); // Output: Sipariş zaten teslim edilmiş. İşlem yapılamaz.

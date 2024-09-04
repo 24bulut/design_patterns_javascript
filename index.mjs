@@ -233,14 +233,33 @@
 
 
 // 3.4 Mediator Pattern
-import { ChatRoom } from "./Patterns/BehavioralPatterns/MediatorPattern/ChatRoom.mjs";
-import { User } from "./Patterns/BehavioralPatterns/MediatorPattern/User.mjs";
+// import { ChatRoom } from "./Patterns/BehavioralPatterns/MediatorPattern/ChatRoom.mjs";
+// import { User } from "./Patterns/BehavioralPatterns/MediatorPattern/User.mjs";
 
-const mediator = new ChatRoom();
+// const mediator = new ChatRoom();
 
-const user1 = new User("Ahmet", mediator);
-const user2 = new User("Mehmet", mediator);
+// const user1 = new User("Ahmet", mediator);
+// const user2 = new User("Mehmet", mediator);
 
-user1.sendMessage("Merhaba, Mehmet!");
+// user1.sendMessage("Merhaba, Mehmet!");
 
-user2.sendMessage("Merhaba, Ahmet! Nasılsın?");
+// user2.sendMessage("Merhaba, Ahmet! Nasılsın?");
+
+
+// 3.5 Observer Pattern
+import { NewsAgency } from "./Patterns/BehavioralPatterns/ObserverPattern/NewsAgency.mjs";
+import { NewsChannel } from "./Patterns/BehavioralPatterns/ObserverPattern/NewsChannel.mjs";
+
+const newsAgency = new NewsAgency();
+
+const channel1 = new NewsChannel("TRT Haber");
+const channel2 = new NewsChannel("CNN News");
+
+newsAgency.subscribe(channel1);
+newsAgency.subscribe(channel2);
+
+newsAgency.updateNews("Son dakika !! yeni haber");
+
+newsAgency.unsubscribe(channel2);
+
+newsAgency.updateNews("Yeni bir haber daha!");

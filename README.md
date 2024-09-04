@@ -28,3 +28,4 @@ Bu repo, JavaScript kullanarak tasarım kalıplarını öğrenmek ve anlamak ist
 2. Command Pattern
 3. Iterator Pattern
 4. Mediator Pattern
+5. Observer Pattern

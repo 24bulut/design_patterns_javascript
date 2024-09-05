@@ -30,3 +30,8 @@ Bu repo, JavaScript kullanarak tasarım kalıplarını öğrenmek ve anlamak ist
 4. Mediator Pattern
 5. Observer Pattern
 6. State Pattern
+7. Strategy Pattern
+8. Template Method Pattern
+
+
+Chatgpt kullanılarak hazırlanmıştır.
